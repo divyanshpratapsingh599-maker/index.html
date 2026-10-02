@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hey Anushka 🥰</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#fff0f6,#ffe4ec,#f7eaff);min-height:100vh;display:grid;place-items:center;padding:24px}main{width:min(100%,420px);background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.5);border-radius:28px;box-shadow:0 20px 60px rgba(215,95,161,.18);padding:32px 24px;text-align:center}.progress{height:10px;background:#ffe0ef;border-radius:999px;overflow:hidden;margin-bottom:22px}.bar{width:0;height:100%;background:linear-gradient(90deg,#ff84b3,#ffb3d1,#ff7ab6);transition:width .4s ease;border-radius:inherit}.heart{font-size:58px;animation:pulse 1.5s ease-in-out infinite;margin-bottom:14px}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}.small,.question,.note{color:#6b3d58}.small{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;opacity:.75}.question{font-size:28px;font-weight:700;line-height:1.4;margin-bottom:12px}.note{font-size:16px;line-height:1.7;margin-bottom:20px}.actions{display:flex;gap:12px;justify-content:center}.btn{border:none;border-radius:999px;padding:12px 18px;cursor:pointer;font-size:1rem;font-weight:600;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 10px 22px rgba(233,119,167,.22)}.btn:hover{transform:translateY(-1px)}#yes{background:linear-gradient(135deg,#ff99c2,#ff74b8);color:#fff}#no{background:linear-gradient(135deg,#f2e4ff,#e2ceff);color:#4b3465}.final{font-size:42px;margin-bottom:12px}.finish{background:linear-gradient(135deg,#ffb0ca,#ff8fb5);color:#fff}
+</style></head>
+<body><main class="card"><div class="progress"><div class="bar" id="bar"></div></div><div id="app"></div></main>
+<script>
+const steps=[
+['🥰','Hey Anushka 🥰','Welcome page… I have a few things to ask you 😁'],
+['😁','How are u Basantii ?? 😁','Hope you’re doing good!'],
+['💖','Do u love me 😭😭💖 ??','Okay… this one is important 👀'],
+['🥀','Do u wanna be yours ???','No pressure — just answer honestly 🥀😭'],
+['🌸',"Can we meet together if you don't mind ....🥀😭",'Maybe a little coffee/walk and a lot of talking?'],
+['❤️','One last thing…','Whatever your answer, thank you for reading this ❤️']
+];
+let i=0; const app=document.getElementById('app'),bar=document.getElementById('bar');
+function render(){const [emoji,q,n]=steps[i];bar.style.width=((i+1)/steps.length*100)+'%';app.innerHTML=`<div class="heart">${emoji}</div><div class="small">A tiny message for you</div><div class="question">${q}</div><div class="note">${n}</div><div class="actions"><button class="btn" id="yes">Yes 💕</button><button class="btn" id="no">No 😅</button></div>`;if(i<steps.length-1){document.getElementById('yes').onclick=()=>{i++;render()};document.getElementById('no').onclick=()=>{i++;render()};}
+ else app.innerHTML='<div class="heart">💗</div><div class="question">Thank you, Anushka 🥰</div><div class="note">Whatever happens, I hope you keep smiling ❤️</div><button class="btn finish" id="finish">Done 💖</button>';document.getElementById('finish').onclick=()=>{app.innerHTML='<div class="heart">💗</div><div class="question">Thank you, Anushka 🥰</div><div class="note">Whatever happens, I hope you keep smiling ❤️</div>'};}
+render();
+</script></body></html>
